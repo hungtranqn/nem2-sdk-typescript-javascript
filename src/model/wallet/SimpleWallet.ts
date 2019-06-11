@@ -107,4 +107,8 @@ export class SimpleWallet extends Wallet {
         return Account.createFromPrivateKey(this.encryptedPrivateKey.decrypt(password), this.network);
     }
 
+    public static backup(name: string, network: NetworkType,address: Address, creationDate: LocalDateTime,encryptedPrivateKey: EncryptedPrivateKey){
+
+        return new SimpleWallet(name, network, address, creationDate, encryptedPrivateKey);
+    }
 }
