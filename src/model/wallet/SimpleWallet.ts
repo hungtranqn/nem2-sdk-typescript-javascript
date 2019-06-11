@@ -109,6 +109,6 @@ export class SimpleWallet extends Wallet {
 
     public static backup(name: string, network: NetworkType,address: Address, creationDate: LocalDateTime,encryptedPrivateKey: EncryptedPrivateKey){
 
-        return new SimpleWallet(name, network, address, creationDate, encryptedPrivateKey);
+        return new SimpleWallet(name, network, address, creationDate, new EncryptedPrivateKey(encryptedPrivateKey.encryptedKey,encryptedPrivateKey.iv));
     }
 }
